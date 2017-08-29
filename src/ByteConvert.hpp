@@ -17,7 +17,7 @@ namespace ByteConvert {
   template<class T>
   uint8_t *varToArray(size_t &size,T var) {
     size = sizeof(T)/sizeof(uint8_t);
-    uint8_t *array = new uint8_t[size];
+    uint8_t *array = new uint8_t[size]; // Alocate memory
     for (size_t i = 0;i < size;i++) {
       if (i != 0) var >>= 8;
       array[size-1-i] = (uint8_t)(var&0xff);
@@ -28,7 +28,7 @@ namespace ByteConvert {
   uint8_t hexToVal(char c);
   String byteToHexString(uint8_t b);
   uint8_t hexStringToByte(String block);
-  String arrayToString(uint8_t *src,size_t size);
+  String arrayToString(size_t size,uint8_t *src);
   uint8_t* stringToArray(size_t &size,String src);
 }
 

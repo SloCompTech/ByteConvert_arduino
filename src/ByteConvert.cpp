@@ -25,18 +25,20 @@ namespace ByteConvert {
     return 16*hexToVal(block.charAt(0))+hexToVal(block.charAt(1));
   }
 
-  String arrayToString(uint8_t *src,size_t size) {
+  String arrayToString(size_t size,uint8_t *src) {
     String buffer = "";
     for (size_t i = 0;i < (size);i++)
       buffer += byteToHexString(src[i]);
     return buffer;
   }
   uint8_t* stringToArray(size_t &size,String src) {
+    // Length of src must be odd !!
+    if (src.length() % 2 == 1)
+      src = "0" + src;
     size = src.length()/2;
     uint8_t *dst = new uint8_t[size]; // Allocate memory space
     for (size_t i = 0;i < (size);i++)
       dst[i] = hexStringToByte(String(src.charAt(i*2))+String(src.charAt(i*2+1)));
-    Serial.println(arrayToString(dst,size));
     return dst;
   }
 }

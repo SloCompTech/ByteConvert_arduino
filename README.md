@@ -6,7 +6,7 @@
 Have you ever wanted to transmit `int`,`short`,`long`,`double` or any other numeric type over I2C,SPI,serial or other protocol or bus, but you converted variable to string to be able to transmit it char by char. This library enables you to convert any numeric value to bytes or other way around and you can also print array of bytes.
 
 ## What you need to consider, when you are using this library
-When you are using this library, you need to consider variable byte size, because if you are using different platform, then there may be some errors, because int on platform 1 has 4 bytes and int on platform 2 has 2 bytes.
+When you are using this library, you need to consider variable byte size, because if you are using different platforms, then there may be some errors, because int on platform 1 has 4 bytes and int on platform 2 may has 2 bytes.
 
 ## Examples
 Convert numeric variable for eg. `int`,`short`,`float`,`double` to array of bytes.
@@ -49,7 +49,7 @@ Convert string of hex characters to array of bytes
 ``` c++
 String somevar = ""; // Predefined string
 size_t blk_size = 0; 
-uint8_t *block ByteConvert::stringToArray(blk_size,somevar);
+uint8_t *block = ByteConvert::stringToArray(blk_size,somevar);
 
 // Use block 
 

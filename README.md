@@ -1,3 +1,5 @@
+<p align="center"><img src="extras/graphics/512.png" alt="Byteconvert" height="200px"></p>
+
 # ByteConvert
 [![Build Status](https://travis-ci.org/SloCompTech/ByteConvert_arduino.svg?branch=master)](https://travis-ci.org/SloCompTech/ByteConvert_arduino)
 [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)]()    
